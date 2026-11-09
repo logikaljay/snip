@@ -47,7 +47,27 @@ On Arch Linux:
 sudo pacman -S gtk4 gtk4-layer-shell grim wl-clipboard libnotify
 ```
 
-## Build and install
+## Install
+
+Install the latest prebuilt release (x86_64 or aarch64) to `~/.local/bin`:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/logikaljay/snip/main/install.sh | sh
+```
+
+The script picks the binary for your CPU, verifies its checksum, and lists any runtime dependencies you're missing. You can change what it does with environment variables:
+
+```sh
+# Install somewhere else
+curl -fsSL https://raw.githubusercontent.com/logikaljay/snip/main/install.sh | sudo env SNIP_INSTALL_DIR=/usr/local/bin sh
+
+# Install a specific release
+curl -fsSL https://raw.githubusercontent.com/logikaljay/snip/main/install.sh | SNIP_VERSION=v0.1.3 sh
+```
+
+Run the same command again to update.
+
+## Build from source
 
 ```sh
 make
